@@ -52,27 +52,32 @@ const clearUI = () => {
 // hide  scanner
 const showScanner = () => {
   const scanner = document.getElementById("qrCodeContainer");
-  scanner.style.display = "block";
+  if(scanner) {
+    scanner.style.display = "block";
+  }
 };
 
 // Show spinner
 const showSpinner = () => {
   const spinner = document.getElementById("spinner");
-  spinner.style.display = "block";
+  if(spinner) {
+    spinner.style.display = "block";
+  }
 };
 
 // Hide spinner
 const hideSpinner = () => {
   const spinner = document.getElementById("spinner");
-  spinner.style.display = "none";
+  if(spinner) {
+    spinner.style.display = "none";
+  }
 };
 
 // Create save button to download QR code as image
 const createSaveBtn = (saveUrl) => {
   const link = document.createElement("a");
   link.id = "save-link";
-  link.classList =
-    'bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5';
+  link.classList = 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 rounded w-1/3 m-auto my-5';
   link.innerHTML = "Save Image";
 
   link.href = saveUrl;
